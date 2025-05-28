@@ -7,14 +7,14 @@ Fixed::Fixed() : nb(0)
 
 Fixed::Fixed(const int intValue) 
 {
-    std::cout << "Int constructor called" << std::endl;
-    nb = intValue << frc_bits;
+	std::cout << "Int constructor called" << std::endl;
+	nb = intValue << frc_bits;
 }
 
 Fixed::Fixed(const float floatValue) 
 {
-    std::cout << "Float constructor called" << std::endl;
-    nb = roundf(floatValue * (1 << frc_bits));
+	std::cout << "Float constructor called" << std::endl;
+	nb = roundf(floatValue * (1 << frc_bits));
 }
 
 Fixed::Fixed(const Fixed &src)
@@ -47,12 +47,12 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat() const 
 {
-    return static_cast<float>(nb) / (1 << frc_bits);
+	return static_cast<float>(nb) / (1 << frc_bits);
 }
 
 int Fixed::toInt() const 
 {
-    return nb >> frc_bits;
+	return nb >> frc_bits;
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) 
